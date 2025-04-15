@@ -1,0 +1,160 @@
+@charset "utf-8";
+
+// @import 'global.scss'; // Old code, not used anymore
+@use 'base/global' as *; // New code, using the global module
+@use 'layout/header' as *;
+@import url('https://cdn.jsdelivr.net/gh/leetaewook/gmarket-sans-dynamic-subset/GmarketSans.css');
+
+
+html{
+  ::-webkit-scrollbar{width: 3px; height: 3px; background: #f3f3f3; border-radius: 10px;}
+  ::-webkit-scrollbar-thumb{background: #dcdcdc; border-radius: 10px;}
+  ::-webkit-scrollbar-thumb:hover{background: #bfbfbf;}
+  ::-webkit-scrollbar-track{background: #f3f3f3; border-radius: 10px;}
+}
+body{display: flex; width: 100%; height: 100vh;background: #ccc; font-size: $base-font-size; background: $base-bg-color;}
+#root{width: 100%;}
+
+.main{  
+  &_top{width: 100%; height: 392px; background: #002b67;
+    &_left{width: calc(100% - 316px);
+      .main_top_logo{width: 296px; position: relative; text-align: center; margin: 156px auto 35px; user-select: none;
+        p{font-weight: 400; font-size: 16px; letter-spacing: -0.8px; color: #fff; margin-bottom: 23px;}
+        h2{font-family: 'Gmarket Sans' !important; font-weight: bold; font-size: 36px; color: #fff;
+          strong{color: $primary-color;}
+        }
+        &::after{content: ''; position: absolute; left: 0; top: 30px; width: 100%; height: 1px; background: #fff; opacity: 0.21; display: block;}
+      }
+      .clock{margin-left: 42px;
+        p{
+          &:nth-child(1){display: flex; align-items: baseline; font-size: 42px; font-weight: 300; letter-spacing: -0.42px; color: #fff;
+            span{font-weight: 400; font-size: 15px; color: #fff;}
+          }
+          &:nth-child(2){font-weight: 500; font-size: 15px; color: #fff;}
+        }
+      }     
+    }
+    &_right{
+      width: 316px; height: calc(100% + 62px); background: rgba(0,0,0,.47); margin-top: -62px; padding: 0 45px;
+      .main_btn_w{width: 226px; height: 30px; border-radius: 20px; letter-spacing: -0.9px; font-size: 15px; margin: 22px auto 0;}
+      .mainTag{margin-top: 92px;
+        .nameBox{width: 100%; display: flex; align-items: center; height: 40px; justify-content: space-between;
+          .left{display: flex; flex-flow: column; gap: 1px 0;
+            .name{font-weight: bold; font-size: 16px; letter-spacing: -0.48px; color: #fff;}
+            .userId{font-weight: 400; font-size: 15px; letter-spacing: -0.75px; color: #fff;}
+          }
+          .right{
+            .btn_more{width: 30px; height: 30px; background: url('../imgs/btn_more.png') no-repeat; text-indent: -9999px; cursor: pointer; user-select: none; display: flex;}            
+          }
+        }
+        .mainTag_btnBox{display: flex; gap: 0 40px; margin-top: 16px;
+          li{font-weight: 500; font-size: 13px; letter-spacing: -0.91px; color: #94adc2; cursor: pointer; user-select: none;
+            &:nth-child(2){position: relative;
+              &::before{content: ''; position: absolute; left: -20px; top: 50%; width: 1px; height: 9px; background: #bbdcff; opacity: 0.21; transform: translateY(-50%);}
+              &::after{content: ''; position: absolute; right: -20px; top: 50%; width: 1px; height: 9px; background: #bbdcff; opacity: 0.21; transform: translateY(-50%);}
+            }
+          }
+        }
+        .profileImg{ width: 225px; height: 124px; border: 1px solid #e1e3e5; border-radius: 8px; margin: 20px auto; position: relative;
+          &::after{content: ''; width: 39px; height: 39px; display: block; position: absolute; right: -10px; bottom: -20px; background: url('../imgs/btn_attcImg.png') no-repeat; cursor: pointer;}
+        }
+      }
+    }
+  }
+  &_middle{ width: 100%; background: #f3f3f3;
+    &_left{width: calc(100% - 316px); display: flex; gap: 0 7px;
+      .tabCont{position: relative; width: calc((100% - 14px) / 3); background: #fff;
+        .tab_setting{width: 20px; height: 20px; background: url('../imgs/icon_mainTabSet.png') no-repeat; text-indent: -9999px; position: absolute; right: 30px; top: 32px; cursor: pointer; user-select: none;}
+        .tabList{
+          .bbsCont{width: 100%; height: 250px; padding-left: 0; padding-top: 0;
+            .bbsTitle, .btn_more{display: none;}
+          }
+        }
+      }
+    }
+    &_right{
+      width: 316px; height: 324px; padding: 22px 14px 11px;
+      .memo{font-weight: 500; font-size: 13px; letter-spacing: -0.39px; color: #707070; line-height: 26px; width: 100%; height: 100%; background: rgba(255,255,255,.92); padding: 16px 18px; box-shadow: 0 3px 6px 0 rgba(201, 201, 201, 0.1); border-radius: 4px; border: none; resize: none; display: block; outline: none;}
+    }
+  }
+  &_bottom{width: 100%; height: 120px; background: #f3f3f3; border-top: 1px solid #dcdcdc;
+    &_left{width: calc(100% - 316px); display: flex; gap: 0 54px;
+      .recVod{
+        &_title{font-weight: bold; font-size: 15px; letter-spacing: -1.05px; color: #000; background: url('../imgs/icon_recVod.png') 0 20px no-repeat; margin: 30px 0 0 42px; white-space: nowrap;}
+      }
+    }
+    &_right{
+      width: 316px; height: 185px; padding: 22px 14px 11px; margin-top: -65px; background: url('../imgs/img_mainBottomAd.png') no-repeat;
+    }
+  }
+  &_btn_w{height: 26px; border: 1px solid #fff; text-align: center; background: transparent; display: flex; align-items: center; justify-content: center;
+    font-weight: 500; color: #fff; cursor: pointer; user-select: none;
+  }
+}
+
+//검색버튼 샘플 컴포넌트
+.search_box{ width: 220px; height: 30px; background: #fff; border-radius: 24px; display: flex; align-items: center; padding: 0 6px;
+  input{border: none; outline: none;}
+  .btn_search{width: 26px; height: 26px; background: url('../imgs/icon_search.png') no-repeat; display: flex; cursor: pointer;}
+}
+
+//공지사항 샘플 컴포넌트
+.bbsCont{ width: calc((100% - 14px) / 3); height: 390px; background: #fff; padding: 31px 34px 0; position: relative;
+  &.notice{padding-left: 42px;}
+  &.hasNew{
+    .bbsTitle{position: relative; display: inline-block;
+      &::after{content: '! 새로운 공지가 있습니다.'; position: absolute; right: -124px; top: -2px; width: 112px; height: 18px; 
+        font-size: 10px; letter-spacing: -0.6px; color: #fff; font-weight: 300; text-indent: 10px;
+        background: #313d4d; border-radius: 15px; display: flex; align-items: center;}
+    }
+  }
+  &.update{
+    .bbsList{      
+      & li{display: flex; gap: 0 12px; flex-direction: row-reverse;  justify-content: start;
+        .date{margin-left: 0; font-weight: 400; font-size: 15px; color: #ababab;}
+      }
+    }
+  }
+  .bbsTitle{margin-bottom: 15px; font-weight: bold; font-size: 15px; letter-spacing: -1.05px; color: #000;}
+  .btn_more{position: absolute; right: 30px; top: 30px; 
+    font-size: 13px; letter-spacing: -0.78px; color: #ccc; font-weight: 400; cursor: pointer;
+  }
+  .bbsList{
+    background: #fff; padding: 0; display: flex; flex-flow: column; gap: 4px 0; max-height: 304px; overflow: hidden; 
+    & li{display: flex; gap: 0 12px;
+      .title{max-width: 400px; width: auto; margin-bottom: 10px;
+        span{width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; font-weight: 400; font-size: 14px; letter-spacing: -0.84px; color: #7e7e7e;        
+        }
+
+      }
+      &.new .title{position: relative;
+        &::after{content: 'N'; position: absolute; right: -12px; top: 0; display: flex; align-items: center; font-weight: bold; font-size: 9px; letter-spacing: -0.54px; color: $primary-color;}
+      }
+      .date{margin-left: auto; font-weight: 400; font-size: 14px; letter-spacing: -0.84px; color: #7e7e7e;}
+      &:hover span{text-decoration: underline; cursor: pointer; font-weight: bold; color: #0c0c0c;}
+      &:hover .date span{text-decoration: none;}
+    }
+  }
+}
+
+// 탭리스트 샘플 컴포넌트
+
+.tabList{width: 100%; display: flex; padding: 30px 30px 0 35px; flex-flow: column; gap: 24px 0;
+  .tabList_tabs{display: flex; gap: 0 35px;
+    .tabList_tab{ font-weight: bold; font-size: 15px; letter-spacing: -1.05px; color: #a2a2a2; cursor: pointer; user-select: none;
+      &.active{color: #000;}
+    }    
+  }
+}
+
+//추천영상 샘플 컴포넌트
+
+.vodList{ display: flex; gap: 0 10px; width: calc(100% - 143px); padding-top: 14px; overflow: hidden; position: relative;
+  li{ display: flex; flex-flow: column; width: 287px; min-width: 287px; height: 83px; background: #fff; border-radius: 4px; box-shadow: 0 3px 6px 0 rgba(201, 201, 201, 0.1); padding: 11px 12px 0;
+    .title{font-size: 12px; letter-spacing: -0.36px; line-height: 17px; color: #7e7e7e; display: inline-block;
+      span{width: 100%; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+    }
+    .platformTxt{font-weight: 500; font-size: 11px; letter-spacing: -0.33px; color: #bfbfbf; margin-top: 16px; display: block;}
+  }
+  &::after{content:''; position: absolute; right: 0; top: 0; width: 73px; height: 100%; background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 73%); opacity: 0.24;}
+}
