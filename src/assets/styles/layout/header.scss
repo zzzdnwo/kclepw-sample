@@ -1,7 +1,7 @@
 .main{
-  header{width: 100%; height: 62px; background: #002b67; border-bottom: 1px solid rgba(255,255,255,.2); padding: 0 336px 0 20px; display: flex; align-items: center;
-    .btn_menu{display: flex; width: 26px; height: 26px; background: url('../../imgs/btn_hamburger.png') no-repeat; text-indent: -9999px; cursor: pointer; user-select: none; margin-right: 32px;}
-    .main_logo{font-family: 'Gmarket Sans' !important; font-size: 20px; font-weight: bold; color: #fff; cursor: pointer; user-select: none;}
+  header{width: 46px; height: 100vh; background: #313d4d; padding: 0; display: flex; flex-flow: column; position: relative;
+    .header_opener{position: absolute; top: 56px; right: -42px; width: 29px; height: 29px; background: #fff; z-index: 9999; display: flex; align-items: center; justify-content: center;  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2); border-radius: 50%; cursor: pointer; user-select: none;}
+    .btn_menu{display: flex; width: 46px; height: 46px; background: url('../../imgs/btn_hamburger.png') center no-repeat; text-indent: -9999px; cursor: pointer; user-select: none;}    
     .header_menu{ margin: 0 66px 0 60px; display: flex; gap: 0 60px;
       li{font-weight: 500; font-size: 15px; letter-spacing: -0.9px; color: #fff; cursor: pointer; user-select: none;       
       }

@@ -1,5 +1,5 @@
 import React from "react";
-import VodItem from './VodItem';
+import VodItem from './VodItem_sw';
 
 function VodList(props){
   const dataMap =[

@@ -2,7 +2,7 @@
 
 // @import 'global.scss'; // Old code, not used anymore
 @use 'base/global' as *; // New code, using the global module
-@use 'layout/header' as *;
+@use 'layout/header_sw' as *;
 @import url('https://cdn.jsdelivr.net/gh/leetaewook/gmarket-sans-dynamic-subset/GmarketSans.css');
 
 
@@ -15,9 +15,51 @@ html{
 body{display: flex; width: 100%; height: 100vh;background: #ccc; font-size: $base-font-size; background: $base-bg-color;}
 #root{width: 100%;}
 
-.main{  display: flex;
-  &_contents{ width: 100%;
-
+.main{  
+  &_top{width: 100%; height: 392px; background: #002b67;
+    &_left{width: calc(100% - 316px);
+      .main_top_logo{width: 296px; position: relative; text-align: center; margin: 156px auto 35px; user-select: none;
+        p{font-weight: 400; font-size: 16px; letter-spacing: -0.8px; color: #fff; margin-bottom: 23px;}
+        h2{font-family: 'Gmarket Sans' !important; font-weight: bold; font-size: 36px; color: #fff;
+          strong{color: $primary-color;}
+        }
+        &::after{content: ''; position: absolute; left: 0; top: 30px; width: 100%; height: 1px; background: #fff; opacity: 0.21; display: block;}
+      }
+      .clock{margin-left: 42px;
+        p{
+          &:nth-child(1){display: flex; align-items: baseline; font-size: 42px; font-weight: 300; letter-spacing: -0.42px; color: #fff;
+            span{font-weight: 400; font-size: 15px; color: #fff;}
+          }
+          &:nth-child(2){font-weight: 500; font-size: 15px; color: #fff;}
+        }
+      }     
+    }
+    &_right{
+      width: 316px; height: calc(100% + 62px); background: rgba(0,0,0,.47); margin-top: -62px; padding: 0 45px;
+      .main_btn_w{width: 226px; height: 30px; border-radius: 20px; letter-spacing: -0.9px; font-size: 15px; margin: 22px auto 0;}
+      .mainTag{margin-top: 92px;
+        .nameBox{width: 100%; display: flex; align-items: center; height: 40px; justify-content: space-between;
+          .left{display: flex; flex-flow: column; gap: 1px 0;
+            .name{font-weight: bold; font-size: 16px; letter-spacing: -0.48px; color: #fff;}
+            .userId{font-weight: 400; font-size: 15px; letter-spacing: -0.75px; color: #fff;}
+          }
+          .right{
+            .btn_more{width: 30px; height: 30px; background: url('../imgs/btn_more.png') no-repeat; text-indent: -9999px; cursor: pointer; user-select: none; display: flex;}            
+          }
+        }
+        .mainTag_btnBox{display: flex; gap: 0 40px; margin-top: 16px;
+          li{font-weight: 500; font-size: 13px; letter-spacing: -0.91px; color: #94adc2; cursor: pointer; user-select: none;
+            &:nth-child(2){position: relative;
+              &::before{content: ''; position: absolute; left: -20px; top: 50%; width: 1px; height: 9px; background: #bbdcff; opacity: 0.21; transform: translateY(-50%);}
+              &::after{content: ''; position: absolute; right: -20px; top: 50%; width: 1px; height: 9px; background: #bbdcff; opacity: 0.21; transform: translateY(-50%);}
+            }
+          }
+        }
+        .profileImg{ width: 225px; height: 124px; border: 1px solid #e1e3e5; border-radius: 8px; margin: 20px auto; position: relative;
+          &::after{content: ''; width: 39px; height: 39px; display: block; position: absolute; right: -10px; bottom: -20px; background: url('../imgs/btn_attcImg.png') no-repeat; cursor: pointer;}
+        }
+      }
+    }
   }
   &_middle{ width: 100%; background: #f3f3f3;
     &_left{width: calc(100% - 316px); display: flex; gap: 0 7px;

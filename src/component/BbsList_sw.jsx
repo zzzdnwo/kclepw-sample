@@ -1,5 +1,5 @@
 import React from "react";
-import BbsPost from './Bbs';
+import BbsPost from './Bbs_sw';
 
 function BbsList({ type = "notice"}){
   const dataMap = {
