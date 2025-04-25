@@ -1,4 +1,4 @@
-import "../styles/main_sw.scss";
+import "../styles/sw/main_sw.scss";
 import BbsList from './BbsList_sw';
 import Memo from './Memo';
 import VodList from './VodList_sw';
@@ -8,8 +8,8 @@ import MainBtn from './MainBtn_sw';
 
 function Main(props){
   return (
-    <div className="main">
-      <header>
+    <div className="main_sw">
+      <div class="sw_header">
         <span className="btn_menu">햄버거 버튼</span>
         <h1 className="main_logo">세무사랑W</h1>
         <ul className="header_menu">
@@ -24,7 +24,7 @@ function Main(props){
         <div className="go_coun">
           <MainBtn name="고객센터"/>
         </div>
-      </header>
+      </div>
       <div className="main_top fb">
         <div className="main_top_left">
           <div className="main_top_logo">

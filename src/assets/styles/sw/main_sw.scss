@@ -1,8 +1,8 @@
 @charset "utf-8";
 
 // @import 'global.scss'; // Old code, not used anymore
-@use 'base/global' as *; // New code, using the global module
-@use 'layout/header_sw' as *;
+@use '../base/global' as *; // New code, using the global module
+@use './header_sw' as *;
 @import url('https://cdn.jsdelivr.net/gh/leetaewook/gmarket-sans-dynamic-subset/GmarketSans.css');
 
 
@@ -15,8 +15,8 @@ html{
 body{display: flex; width: 100%; height: 100vh;background: #ccc; font-size: $base-font-size; background: $base-bg-color;}
 #root{width: 100%;}
 
-.main{  
-  &_top{width: 100%; height: 392px; background: #002b67;
+.main_sw{  
+  .main_top{width: 100%; height: 392px; background: #002b67;
     &_left{width: calc(100% - 316px);
       .main_top_logo{width: 296px; position: relative; text-align: center; margin: 156px auto 35px; user-select: none;
         p{font-weight: 400; font-size: 16px; letter-spacing: -0.8px; color: #fff; margin-bottom: 23px;}
@@ -44,7 +44,7 @@ body{display: flex; width: 100%; height: 100vh;background: #ccc; font-size: $bas
             .userId{font-weight: 400; font-size: 15px; letter-spacing: -0.75px; color: #fff;}
           }
           .right{
-            .btn_more{width: 30px; height: 30px; background: url('../imgs/btn_more.png') no-repeat; text-indent: -9999px; cursor: pointer; user-select: none; display: flex;}            
+            .btn_more{width: 30px; height: 30px; background: url('/assets/imgs/btn_more.png') no-repeat; text-indent: -9999px; cursor: pointer; user-select: none; display: flex;}            
           }
         }
         .mainTag_btnBox{display: flex; gap: 0 40px; margin-top: 16px;
@@ -56,15 +56,15 @@ body{display: flex; width: 100%; height: 100vh;background: #ccc; font-size: $bas
           }
         }
         .profileImg{ width: 225px; height: 124px; border: 1px solid #e1e3e5; border-radius: 8px; margin: 20px auto; position: relative;
-          &::after{content: ''; width: 39px; height: 39px; display: block; position: absolute; right: -10px; bottom: -20px; background: url('../imgs/btn_attcImg.png') no-repeat; cursor: pointer;}
+          &::after{content: ''; width: 39px; height: 39px; display: block; position: absolute; right: -10px; bottom: -20px; background: url('/assets/imgs/btn_attcImg.png') no-repeat; cursor: pointer;}
         }
       }
     }
   }
-  &_middle{ width: 100%; background: #f3f3f3;
+  .main_middle{ width: 100%; background: #f3f3f3;
     &_left{width: calc(100% - 316px); display: flex; gap: 0 7px;
       .tabCont{position: relative; width: calc((100% - 14px) / 3); background: #fff;
-        .tab_setting{width: 20px; height: 20px; background: url('../imgs/icon_mainTabSet.png') no-repeat; text-indent: -9999px; position: absolute; right: 30px; top: 32px; cursor: pointer; user-select: none;}
+        .tab_setting{width: 20px; height: 20px; background: url('/assets/imgs/icon_mainTabSet.png') no-repeat; text-indent: -9999px; position: absolute; right: 30px; top: 32px; cursor: pointer; user-select: none;}
         .tabList{
           .bbsCont{width: 100%; height: 250px; padding-left: 0; padding-top: 0;
             .bbsTitle, .btn_more{display: none;}
@@ -77,17 +77,17 @@ body{display: flex; width: 100%; height: 100vh;background: #ccc; font-size: $bas
       .memo{font-weight: 500; font-size: 13px; letter-spacing: -0.39px; color: #707070; line-height: 26px; width: 100%; height: 100%; background: rgba(255,255,255,.92); padding: 16px 18px; box-shadow: 0 3px 6px 0 rgba(201, 201, 201, 0.1); border-radius: 4px; border: none; resize: none; display: block; outline: none;}
     }
   }
-  &_bottom{width: 100%; height: 120px; background: #f3f3f3; border-top: 1px solid #dcdcdc;
+  .main_bottom{width: 100%; height: 120px; background: #f3f3f3; border-top: 1px solid #dcdcdc;
     &_left{width: calc(100% - 316px); display: flex; gap: 0 54px;
       .recVod{
-        &_title{font-weight: bold; font-size: 15px; letter-spacing: -1.05px; color: #000; background: url('../imgs/icon_recVod.png') 0 20px no-repeat; margin: 30px 0 0 42px; white-space: nowrap;}
+        &_title{font-weight: bold; font-size: 15px; letter-spacing: -1.05px; color: #000; background: url('/assets/imgs/icon_recVod.png') 0 20px no-repeat; margin: 30px 0 0 42px; white-space: nowrap;}
       }
     }
     &_right{
-      width: 316px; height: 185px; padding: 22px 14px 11px; margin-top: -65px; background: url('../imgs/img_mainBottomAd.png') no-repeat;
+      width: 316px; height: 185px; padding: 22px 14px 11px; margin-top: -65px; background: url('/assets/imgs/img_mainBottomAd.png') no-repeat;
     }
   }
-  &_btn_w{height: 26px; border: 1px solid #fff; text-align: center; background: transparent; display: flex; align-items: center; justify-content: center;
+  .main_btn_w{height: 26px; border: 1px solid #fff; text-align: center; background: transparent; display: flex; align-items: center; justify-content: center;
     font-weight: 500; color: #fff; cursor: pointer; user-select: none;
   }
 }
@@ -95,7 +95,7 @@ body{display: flex; width: 100%; height: 100vh;background: #ccc; font-size: $bas
 //검색버튼 샘플 컴포넌트
 .search_box{ width: 220px; height: 30px; background: #fff; border-radius: 24px; display: flex; align-items: center; padding: 0 6px;
   input{border: none; outline: none;}
-  .btn_search{width: 26px; height: 26px; background: url('../imgs/icon_search.png') no-repeat; display: flex; cursor: pointer;}
+  .btn_search{width: 26px; height: 26px; background: url('/assets/imgs/icon_search.png') no-repeat; display: flex; cursor: pointer;}
 }
 
 //공지사항 샘플 컴포넌트

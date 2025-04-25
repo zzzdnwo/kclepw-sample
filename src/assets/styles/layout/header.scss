@@ -1,12 +1,36 @@
-.main{
-  header{width: 46px; height: 100vh; background: #313d4d; padding: 0; display: flex; flex-flow: column; position: relative;
-    .header_opener{position: absolute; top: 56px; right: -42px; width: 29px; height: 29px; background: #fff; z-index: 9999; display: flex; align-items: center; justify-content: center;  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2); border-radius: 50%; cursor: pointer; user-select: none;}
-    .btn_menu{display: flex; width: 46px; height: 46px; background: url('../../imgs/btn_hamburger.png') center no-repeat; text-indent: -9999px; cursor: pointer; user-select: none;}    
-    .header_menu{ margin: 0 66px 0 60px; display: flex; gap: 0 60px;
-      li{font-weight: 500; font-size: 15px; letter-spacing: -0.9px; color: #fff; cursor: pointer; user-select: none;       
-      }
+header{
+  &.main_header{
+    width: 50px; height: 100vh; background: #313d4d; padding: 0; display: flex; flex-flow: column; position: relative; transition: all 0.5s ease; justify-content: space-between;
+    .header_opener{position: absolute; top: 56px; right: -42px; width: 29px; height: 29px; background: #fff; z-index: 9999; display: flex; align-items: center; justify-content: center;  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2); border-radius: 50%; cursor: pointer; user-select: none; outline: none; border: none;}
+    .header_menu_btn{display: flex; width: 50px; height: 50px; background: url('../../imgs/logo_zeni.png') -1px center no-repeat; text-indent: -9999px; cursor: pointer; user-select: none;
+      &.btn0{background: url('../../imgs/btn_main1.png') center no-repeat;}
+      &.btn1{background: url('../../imgs/btn_main2.png') center no-repeat;}
+      &.btn2{background: url('../../imgs/btn_main3.png') center no-repeat;}
+      &.btn3{background: url('../../imgs/btn_main4.png') center no-repeat;}
+      &.btn4{background: url('../../imgs/btn_main5.png') center no-repeat;}
+      &.btn5{background: url('../../imgs/btn_main6.png') center no-repeat;}
     }
-    .go_coun{margin-left: auto;}
-      .main_btn_w{width: 78px; border-radius: 5px; margin-left: auto; letter-spacing: -0.78px; font-size: 13px;}
-  }
+    .header_goHome_btn{display: flex; width: 50px; height: 50px; background: url('../../imgs/btn_hamburger.png') center no-repeat; text-indent: -9999px; cursor: pointer; user-select: none; margin-bottom: 20px;}
+    .header_searchCont{
+      input{display: none;}
+      .header_search_btn{display: flex; width: 50px; height: 50px; background: url('../../imgs/btn_search.png') center no-repeat; text-indent: -9999px; cursor: pointer; user-select: none; margin-top: 18px;}
+    }
+    .main_header_Tablist{display: flex; flex-flow: column; overflow: hidden;
+      li{width: 148px; display: flex; cursor: pointer;
+        span{width: 102px; height: 50px; padding-left: 18px; align-items: center; display: none; font-weight: 400; font-size: 14px; letter-spacing: -0.7px; color: #abb7c7; transition: all 1.5s ease; opacity: 0; white-space: nowrap; user-select: none;}
+      }      
+    }
+    &.on{width: 182px;
+      .header_opener{position: absolute; top: 12px; right: -15px; width: 29px; height: 29px; background: #fff; z-index: 9999; display: flex; align-items: center; justify-content: center;  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2); border-radius: 50%; cursor: pointer; user-select: none;}
+      .main_header_Tablist{
+        li{
+          span{width: calc(100% - 50px); display: flex; opacity: 1;}
+        }
+      }
+      .header_searchCont{ display: flex; align-items: center; position: relative; padding-left: 12px; width: 182px; margin-top: 13px;
+        input{font-size: 14px; font-weight: 300; letter-spacing: -0.84px; color: #fff; display: flex; width: 156px; height: 42px; border: 1px solid #d2d2d2; background: #414e5e; border-radius: 5px; outline: none; padding: 0 28px 0 14px;}
+        .header_search_btn{position: absolute; right: 18px; top: 0; margin-top: 0; height: 42px; width: 26px;}
+      }
+    }  
+  }  
 }
