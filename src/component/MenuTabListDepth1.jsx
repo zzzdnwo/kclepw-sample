@@ -1,11 +1,6 @@
 import React from "react";
 import Button from "./Button";
 
-
-/*function handleClick() {
-
-}*/
-
 function MenuDepth1TabList({ selectedDepth1, onSelect }) {
   const menus = ['회계관리', '부가가치', '인사급여', '법인조정', '개인조정', '물류관리'];
 

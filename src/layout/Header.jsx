@@ -13,7 +13,12 @@ function handleClick() {
     //menu.classList.toggle("open");
 }
 
-function Header({ selectedDepth1, onSelect }) {
+type HeaderProps = {
+  selectedDepth1: string;
+  onSelect: (menu: string) => void;
+}
+
+function Header({ selectedDepth1, onSelect }: HeaderProps) {
   return(
     <header className="main_header">
       <div className="main_header_top">

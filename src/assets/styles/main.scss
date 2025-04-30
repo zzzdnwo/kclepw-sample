@@ -6,8 +6,8 @@
 @import url('https://cdn.jsdelivr.net/gh/leetaewook/gmarket-sans-dynamic-subset/GmarketSans.css');
 
 
-html{
-  ::-webkit-scrollbar{width: 3px; height: 3px; background: #f3f3f3; border-radius: 10px;}
+html{ 
+  ::-webkit-scrollbar{width: 13px; height: 13px; background: #f3f3f3; border-radius: 10px;}
   ::-webkit-scrollbar-thumb{background: #dcdcdc; border-radius: 10px;}
   ::-webkit-scrollbar-thumb:hover{background: #bfbfbf;}
   ::-webkit-scrollbar-track{background: #f3f3f3; border-radius: 10px;}
@@ -18,9 +18,9 @@ body{display: flex; width: 100%; height: 100vh;background: #ccc; font-size: $bas
 .main{  display: flex;
   &_contents{ width: 100%; background: #aaa; position: relative;
     .contents_mainDepth1{background: #f5f5f5; height: 100%;
-      .mainDepth1_top{ height: 57px;
+      .mainDepth1_top{ height: 57px; border-bottom: 1.5px solid #e1e1e1;
         &Flex{ height: 57px; display: flex; justify-content: space-between;
-          .mainDepth1_TabList{display: flex; gap: 0 60px; height: 100%; padding: 0 20px; border-bottom: 1.5px solid #e1e1e1;
+          .mainDepth1_TabList{display: flex; gap: 0 60px; height: 100%; padding: 0 20px; 
             li{ padding-top: 26px; position: relative; height: 100%;            
               button{font-weight: 500; font-size: 15px; letter-spacing: -0.9px; color: #000;
                 &:hover{font-weight: bold;
@@ -32,7 +32,7 @@ body{display: flex; width: 100%; height: 100vh;background: #ccc; font-size: $bas
         }
       }
       .mainDepth1_bottom{ height: calc(100% - 56px); display: flex;
-        .mainDepth2_TabList{display: flex; flex-flow: column; width: 194px; height: 100%; padding-top: 8px; border-right: 1px solid #d9d9d9; user-select: none;
+        .mainDepth2_TabList{display: flex; flex-flow: column; width: 194px; height: 100%; background: #f5f5f5; padding-top: 8px; border-right: 1px solid #d9d9d9; user-select: none;
           li{ position: relative; height: 100%; border: 1px solid #d9d9d9; height: 50px; display: flex; align-items: center; padding-left: 20px; border-top: none; border-right: none; cursor: pointer;
             button{font-weight: 500; font-size: 16px; letter-spacing: -1.12px; color: #929292;}
             &:hover button{font-weight: bold; color: #000;}

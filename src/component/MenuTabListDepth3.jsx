@@ -17,7 +17,7 @@ function MenuDepth3TabList( { selectedDepth2 } ){
     }   
   }
  
-  const depth3List = menuData[selectedDepth2].depth3;
+  const depth3List = menuData[selectedDepth2]?.depth3;
   return(
     <div className="mainDepth3">
       {depth3List.map(menu => (

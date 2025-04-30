@@ -24,7 +24,7 @@ function MenuDepth2TabList( { selectedDepth1, onSelect} ){
       depth2: ['물류관리']
     }
   }
-  const depth2List = menuData[selectedDepth1].depth2;
+  const depth2List = menuData[selectedDepth1]?.depth2;
 
   return(
     <ul className="mainDepth2_TabList">
