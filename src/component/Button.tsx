@@ -1,8 +1,12 @@
 import React from "react";
 
+interface ButtonProps {
+  label?: string;
+  name?: string;
+  onClick?: () => void;
+}
 
-
-function Button({label,name,onClick}){
+const Button :React.FC<ButtonProps> = ({ label, name, onClick }) => {
 
   /*
   function handleClick() {

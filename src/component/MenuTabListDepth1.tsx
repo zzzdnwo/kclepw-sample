@@ -1,7 +1,16 @@
 import React from "react";
 import Button from "./Button";
 
-function MenuDepth1TabList({ selectedDepth1, onSelect }) {
+// 상위 페이지에서 받은 props 저장
+
+interface MenuDepth1TabListProps {
+  selectedDepth1: string;
+  onSelect: (value: string) => void;
+}
+
+// MenuDepth1TabList 타입은 MenuDepth1TabListProps를 상속받는다 라는 뜻
+
+const MenuDepth1TabList :React.FC<MenuDepth1TabListProps> = ({ selectedDepth1, onSelect }) => {
   const menus = ['회계관리', '부가가치', '인사급여', '법인조정', '개인조정', '물류관리'];
 
   return(

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Footer(props){
+const Footer = () => {
   return(
     <footer>
       <h2>(주) 뉴젠솔루션</h2>

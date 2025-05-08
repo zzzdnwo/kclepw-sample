@@ -1,9 +1,14 @@
 import React from "react";
 
+interface MenuDepth4TabListProps {
+  selectedDepth2: string;
+  selectMenu: string;
+}
 
-function MenuDepth4TabList( { selectedDepth2, selectMenu } ){
+
+const MenuDepth4TabList: React.FC<MenuDepth4TabListProps> = ( { selectedDepth2, selectMenu } ) =>{
   
-  const menuData = {
+  const menuData:any = {
     재무회계: {
       전표입력: {
         depth4: ['일반전표입력', '매입매출전표입력', '시산표입력', '전표출력', '업무용승용차운행기록부']
@@ -61,7 +66,7 @@ function MenuDepth4TabList( { selectedDepth2, selectMenu } ){
   
   return (
     <ul className="mainDepth4_TabList">
-      {depth4List.map((menu, index) => (
+      {depth4List.map((menu:string, index:any) => (
         <li key={index}>{menu}</li>
       ))}
     </ul>

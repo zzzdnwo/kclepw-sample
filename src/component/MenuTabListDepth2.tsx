@@ -1,10 +1,15 @@
 import React from "react";
 import Button from "./Button";
 
+interface MenuDepth2TabListProps {
+  selectedDepth1: string;
+  onSelect: (menu: string) => void;
+}
 
-function MenuDepth2TabList( { selectedDepth1, onSelect} ){
 
-  const menuData = {
+const MenuDepth2TabList: React.FC<MenuDepth2TabListProps> = ( { selectedDepth1, onSelect} ) => {
+
+  const menuData:any = {
     회계관리: {
       depth2: ['재무회계' , '자금/예산/현장등', '데이터분석/관리', '데이터연동/기타']
     },
@@ -24,7 +29,9 @@ function MenuDepth2TabList( { selectedDepth1, onSelect} ){
       depth2: ['물류관리']
     }
   }
-  const depth2List = menuData[selectedDepth1]?.depth2;
+
+  // 가져오는 값이 배열이라 string[] 로 지정
+  const depth2List:string[] = menuData[selectedDepth1]?.depth2 || [];
 
   return(
     <ul className="mainDepth2_TabList">
