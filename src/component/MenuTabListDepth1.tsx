@@ -22,9 +22,13 @@ const MenuDepth1TabList :React.FC<MenuDepth1TabListProps> = ({ selectedDepth1, o
           </li>
         ))}  
       </ul>
-      <div className="mainDepth1_SearchBox">
-
-      </div>
+      <div className="rightCont">
+        <div className="mainDepth1_SearchBox">
+          <input type="text" className="mainDepth1_SearchInput" placeholder="메뉴검색"/>
+          <Button name="mainDepth1_search_btn" label="검색" onClick={() => {}} />
+        </div>
+        <span className="modalCloseBtn"></span>
+      </div>      
     </div>    
   );
 }

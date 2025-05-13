@@ -5,7 +5,6 @@ interface MenuDepth4TabListProps {
   selectMenu: string;
 }
 
-
 const MenuDepth4TabList: React.FC<MenuDepth4TabListProps> = ( { selectedDepth2, selectMenu } ) =>{
   
   const menuData:any = {
@@ -61,7 +60,8 @@ const MenuDepth4TabList: React.FC<MenuDepth4TabListProps> = ( { selectedDepth2, 
       }
     },
   }
- 
+  
+  // ?. 옵셔널체이닝 안쓰면 에러 나옴
   const depth4List = menuData[selectedDepth2]?.[selectMenu]?.depth4 || [];
   
   return (

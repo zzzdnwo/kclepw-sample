@@ -1,26 +1,14 @@
 import React from "react";
 
+// 일부 props를 안담는 경우도 있어 ?를 붙여줌
 interface ButtonProps {
   label?: string;
   name?: string;
   onClick?: () => void;
 }
 
+// 공통 버튼 컴포넌트
 const Button :React.FC<ButtonProps> = ({ label, name, onClick }) => {
-
-  /*
-  function handleClick() {
-    if(`${props.onClick}` === "open"){
-      const header = document.querySelector(".main_header");
-      //const menu = document.querySelector(".main_header_Tablist");
-      alert(header);
-      // header.classList.toggle("on");
-      //menu.classList.toggle("open");
-    }
-    
-  }
-*/
-
   return(
     <button type="button" className={name} onClick={onClick}>{label}</button>
   );
